@@ -13,6 +13,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.10.26 | 머신러닝 기초, 분류·회귀 모델 비교 및 평가 | [학습 자료](./20261026/README.md) |
 | 2026.10.27 | 결정 트리, Random Forest, XGBoost, 특성 중요도, 교차검증 | [학습 자료](./20261027/README.md) |
 | 2026.10.28 | 평가지표(ROC-AUC·임계값), 특성 설계, K-Means, 최종 평가 | [학습 자료](./20261028/README.md) |
+| 2026.10.29 | 평가지표(ROC-AUC·임계값), 특성 설계, K-Means, 최종 평가 | [학습 자료](./20261029/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
@@ -44,30 +45,6 @@ ai_academy_2nd/
 - `outputs/`: 모델 비교, 예측 결과, 특성 중요도 등 실험 산출물
 
 ※ 날짜별 폴더의 실제 구성은 학습 주제와 과제에 따라 달라질 수 있습니다.
-
-## 🧠 주요 학습 분야
- 
-### Python & Data Analysis
-- Python 프로그래밍 및 데이터 처리
-- Pandas를 활용한 데이터 분석
-- 실습 데이터 정리 및 결과 저장
-### Machine Learning
-- 분류(Classification)와 회귀(Regression)
-- 결정 트리(Decision Tree)
-- 랜덤 포레스트(Random Forest)
-- XGBoost
-- 특성 중요도(Feature Importance)
-- 특성 설계(Feature Engineering)와 Pipeline 구성
-- 군집화(K-Means)
-### Model Evaluation
-- 학습 데이터와 검증 데이터의 분리
-- 교차검증(Cross-Validation)
-- Accuracy, Precision, Recall, F1 Score 및 혼동행렬
-- ROC-AUC와 분류 임계값
-- RMSE 등 회귀 평가 지표
-- 모델별 성능 비교와 오류 분석
-- 데이터 누수 방지 및 평가 결과 해석
-- 평가 계획 확정 후 최종 test 평가
 
 ## 🔬 실습 및 결과 기록
  
