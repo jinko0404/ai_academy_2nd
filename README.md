@@ -14,6 +14,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.10.27 | 결정 트리, Random Forest, XGBoost, 특성 중요도, 교차검증 | [학습 자료](./20261027/README.md) |
 | 2026.10.28 | 평가지표(ROC-AUC·임계값), 특성 설계, K-Means, 최종 평가 | [학습 자료](./20261028/README.md) |
 | 2026.10.29 | GPU·Tensor 기초, ANN 모델 구조, nn.Module과 nn.Sequential 비교 | [학습 자료](./20261029/README.md) |
+| 2026.10.30 | PyTorch ANN 응용 실습, Optimizer·Learning Rate·Batch Size·Dropout·BatchNorm 비교, 모델 학습 및 검증 | [학습 자료](./20261030/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
