@@ -347,9 +347,9 @@ PNG 창이 안 열림: 오류가 아닙니다. 저장된 PNG를 VS Code 파일 �
 
 |상황|관찰|내가 먼저 확인할 것|내 처방 후보|
 |---|---|---|---|
-|A|20회 동안 train·valid loss가 모두 거의 줄지 않음|||
-|B|train loss는 0.6→0.1, valid loss는 0.5→0.8|||
-|C|같은 입력인데 평가할 때마다 확률이 달라짐|||
-|D|작은 batch에서 BatchNorm 사용 후 값이 크게 출렁임|||
+|A|20회 동안 train·valid loss가 모두 거의 줄지 않음|학습률, 데이터, 정답, 모델 구조|학습률 조정, Epoch증가, 모델층, 뉴런 증가|
+|B|train loss는 0.6→0.1, valid loss는 0.5→0.8|Train과 valid 데이터 분포, 과적합 여부|dropout 적용,학습 데이터 추가, Early Stopping 적용|
+|C|같은 입력인데 평가할 때마다 확률이 달라짐|평가모드에서 검증했는지 여부, Dropout 작동 여부|평가모드 전환, torch.no_grad() 사용|
+|D|작은 batch에서 BatchNorm 사용 후 값이 크게 출렁임|Batch Size, Batch별 데이터 분포|Batch Size 증가, LayerNorm 사용, BatchNorm 제거|
 
 기본필수는 한 상황만 말로 설명해도 됩니다. 복잡한 예외처리 코드를 추가하는 과제가 아닙니다.
