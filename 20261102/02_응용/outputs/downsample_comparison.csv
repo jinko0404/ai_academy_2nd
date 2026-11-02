@@ -1,0 +1,3 @@
+method,shape,params
+pool,"(4, 8, 16, 16)",0
+conv_stride2,"(4, 8, 16, 16)",584
