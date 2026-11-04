@@ -1,0 +1,4 @@
+﻿source,source_w,source_h,output_w,output_h,edge_pixels
+scene.png,320,240,160,120,1454
+noisy.png,320,240,160,120,2476
+objects.png,320,240,160,120,433
