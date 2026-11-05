@@ -17,6 +17,8 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.10.30 | PyTorch ANN 응용 실습 및 모델 성능 비교 | [학습 자료](./20261030/README.md) |
 | 2026.11.02 | 이미지 Tensor, CNN·Pooling, 이미지 분류, 전이학습(ResNet18) | [학습 자료](./20261102/README.md) |
 | 2026.11.03 | Sequence Tensor·Padding·Mask, RNN·LSTM, Autoencoder | [학습 자료](./20261103/README.md) |
+| 2026.11.04 | OpenCV 이미지·영상 전처리, 색공간·필터·형태학, 데이터 증강 | [학습 자료](./20261104/README.md) |
+| 2026.11.05 | 데이터셋 분할·누수 검사, 전이학습·Fine-tuning, 클래스 불균형 대응, 오류 분석·Grad-CAM | [학습 자료](./20261105/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
@@ -83,4 +85,4 @@ ai_academy_2nd/
 
 **Status:** In Progress  
 **Purpose:** AI/ML Learning Archive  
-**Last Updated:** 2026-10-28
+**Last Updated:** 2026-11-05
