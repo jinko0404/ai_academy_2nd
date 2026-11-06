@@ -127,8 +127,8 @@ confidence를 변경하는 후속 실험은 기존 결과와 구분하여 기록
 ## 8. 증빙 자료
 
 - 코드: [07_project.py](07_project.py)
-- 모델: `data/demo.pt`
-- 입력 영상: `data/demo.avi`
+- 모델: [demo.pt](data/demo.pt)
+- 입력 영상: [demo.avi](data/demo.avi)
 - 영상 GT: [track_ground_truth.csv](data/track_ground_truth.csv)
 - 비교 요약: [tracker_comparison.csv](outputs/tracker_comparison.csv)
 - ByteTrack 프레임 기록: [bytetrack_frames.csv](outputs/bytetrack_frames.csv)
