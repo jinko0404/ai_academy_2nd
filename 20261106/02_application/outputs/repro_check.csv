@@ -1,0 +1,7 @@
+artifact,result
+bytetrack_frames.csv,True
+bytetrack_tracks.csv,True
+bytetrack_video,"{'equal_decoded_pixels': True, 'frames': 30}"
+botsort_frames.csv,True
+botsort_tracks.csv,True
+botsort_video,"{'equal_decoded_pixels': True, 'frames': 30}"
