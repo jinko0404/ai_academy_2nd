@@ -49,8 +49,8 @@ a1d2ca2fe97fb8e11a3c919a9a542bbe5b6f501b33d29c9d2cb6d39e901d0ed4
 
 | Tracker | 처리 프레임 | 박스 0건 프레임 | 추적 행 | 기록된 고유 ID | 경과 시간(초) | 전체 처리량(프레임/초) |
 |---|---:|---:|---:|---:|---:|---:|
-| ByteTrack | 30 | 30 | 0 | 0 | 3.4390 | 8.7236 |
-| BoT-SORT | 30 | 30 | 0 | 0 | 0.2310 | 129.8557 |
+| ByteTrack | 30 | 30 | 0 | 0 | 3.3824 | 8.8695 |
+| BoT-SORT | 30 | 30 | 0 | 0 | 0.2314 | 129.6314 |
 
 두 출력 AVI에서 각각 30프레임을 실제로 읽을 수 있음을 확인했다. 원본과 두 출력 영상의 0·5·10·15·20·29번 프레임을 시각적으로 비교했다. 표본 프레임에서 빨간 사각형·초록 원·파란 삼각형의 위치 변화가 원본과 대응하며, 검은 화면이나 뚜렷한 화면 깨짐은 관찰되지 않았다. 두 출력 모두 예측 박스·클래스 텍스트·추적 ID 표시는 없었다. 이는 CSV의 반환 박스 0건과 일치한다. 전 프레임 육안 판독이나 실시간 재생 검사는 수행하지 않았다.
 
@@ -135,7 +135,7 @@ confidence를 변경하는 후속 실험은 기존 결과와 구분하여 기록
 - ByteTrack 추적 기록: [bytetrack_tracks.csv](outputs/bytetrack_tracks.csv)
 - BoT-SORT 추적 기록: [botsort_tracks.csv](outputs/botsort_tracks.csv)
 - 출력 영상: [bytetrack.avi](outputs/bytetrack.avi), [botsort.avi](outputs/botsort.avi)
-- 원본 실행 로그: 별도 파일 미확인
+- 실행 로그: [p07_execution_log.txt](outputs/p07_execution_log.txt) — 사용자 제공 최신 실행 출력
 
 ---
 
@@ -162,7 +162,11 @@ confidence를 변경하는 후속 실험은 기존 결과와 구분하여 기록
 
 기존 산출물을 outputs/repro_before에 보관한 뒤 동일 스크립트·가중치·영상·CPU 설정으로 재실행했다. 두 tracker 모두 프레임 CSV와 추적 CSV의 값·행 순서가 기존과 일치했다. 출력 영상은 각각 30프레임이며, 디코딩한 모든 프레임의 픽셀 배열도 기존 영상과 완전히 일치했다. 반환 박스와 추적 기록은 다시 모두 0건으로 GT 기반 TP=0, FP=0, FN=90 결과도 동일하다.
 
-처리 시간은 ByteTrack 3.3304→3.4390초, BoT-SORT 0.2247→0.2310초로 변했다. 본문의 처리 결과 표는 재실행값으로 갱신했으며 시간 차이는 예측 결과 불일치로 취급하지 않는다. 비교 기록은 [repro_check.csv](outputs/repro_check.csv), 최초 결과는 [기존 요약](outputs/repro_before/tracker_comparison.csv)에 보관했다. 한 번의 재실행 일치는 다른 환경이나 모든 실행에서의 결정성을 보장하지 않는다.
+처리 시간은 ByteTrack 3.3304→3.4390초, BoT-SORT 0.2247→0.2310초로 변했다. 당시 재실행값을 기록한 것이며, 본문의 처리 결과 표는 이후 사용자 제공 최신 로그·CSV 값으로 갱신했다. 시간 차이는 예측 결과 불일치로 취급하지 않는다. 비교 기록은 [repro_check.csv](outputs/repro_check.csv), 최초 결과는 [기존 요약](outputs/repro_before/tracker_comparison.csv)에 보관했다. 한 번의 재실행 일치는 다른 환경이나 모든 실행에서의 결정성을 보장하지 않는다.
+
+### 최신 실행 로그 반영
+
+사용자 제공 [실행 로그](outputs/p07_execution_log.txt)의 마지막 요약과 현재 tracker_comparison.csv를 대조했다. ByteTrack은 3.382370초·8.869519프레임/초, BoT-SORT는 0.231426초·129.631350프레임/초이며, 본문 표는 소수점 넷째 자리까지 표시했다. 두 조건 모두 30프레임·추적 행 0건으로 기존 관찰과 일치하며, GT 대조 결과 TP=0·FP=0·FN=90 해석은 유지된다. 최신 실행 영상의 전체 픽셀을 다시 비교한 것은 아니며, 위 영상 일치 검사는 앞서 수행한 재실행에 대한 증빙이다.
 
 
 ### 제출 전 체크리스트
