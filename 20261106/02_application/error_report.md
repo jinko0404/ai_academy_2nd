@@ -135,7 +135,7 @@ confidence를 변경하는 후속 실험은 기존 결과와 구분하여 기록
 - ByteTrack 추적 기록: [bytetrack_tracks.csv](outputs/bytetrack_tracks.csv)
 - BoT-SORT 추적 기록: [botsort_tracks.csv](outputs/botsort_tracks.csv)
 - 출력 영상: [bytetrack.avi](outputs/bytetrack.avi), [botsort.avi](outputs/botsort.avi)
-- 실행 로그: [p07_execution_log.txt](outputs/p07_execution_log.txt) — 사용자 제공 최신 실행 출력
+- 실행 로그: [p07_execution_log.txt](outputs/p07_execution_log.txt)
 
 ---
 
