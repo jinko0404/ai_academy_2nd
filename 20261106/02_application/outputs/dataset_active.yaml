@@ -1,0 +1,6 @@
+names:
+- square
+- circle
+- triangle
+train: C:\workspace\20261106\02_application\data\images\train
+val: C:\workspace\20261106\02_application\data\images\val

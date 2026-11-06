@@ -1,0 +1,4 @@
+class_id,name,precision,recall,ap50,ap50_95
+0,square,0.0,0.0,0.0,0.0
+1,circle,0.0,0.0,0.0,0.0
+2,triangle,0.0,0.0,0.0,0.0

@@ -1,0 +1,1 @@
+yolo detect train model=yolo26n.yaml data="C:\workspace\20261106\02_application\outputs\dataset_active.yaml" epochs=2 imgsz=160 batch=4 workers=0 device=cpu amp=False pretrained=False optimizer=SGD lr0=0.01 seed=42 plots=False project="C:\workspace\20261106\02_application\outputs" name=cli_smoke exist_ok=True
