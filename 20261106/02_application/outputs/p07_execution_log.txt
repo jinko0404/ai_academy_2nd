@@ -1,0 +1,68 @@
+$ python 07_project.py 
+
+video 1/1 (frame 1/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 10.2ms
+video 1/1 (frame 2/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 5.8ms
+video 1/1 (frame 3/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+video 1/1 (frame 4/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.5ms
+video 1/1 (frame 5/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 6/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.9ms
+video 1/1 (frame 7/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.4ms
+video 1/1 (frame 8/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.1ms
+video 1/1 (frame 9/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 10/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 11/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.6ms
+video 1/1 (frame 12/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 13/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 14/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.7ms
+video 1/1 (frame 15/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 16/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.5ms
+video 1/1 (frame 17/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.2ms
+video 1/1 (frame 18/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 19/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.5ms
+video 1/1 (frame 20/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 21/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.9ms
+video 1/1 (frame 22/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.0ms
+video 1/1 (frame 23/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 24/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+video 1/1 (frame 25/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 26/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.5ms
+video 1/1 (frame 27/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 28/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.4ms
+video 1/1 (frame 29/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.5ms
+video 1/1 (frame 30/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+Speed: 0.3ms preprocess, 4.2ms inference, 0.2ms postprocess per image at shape (1, 3, 128, 160)
+
+video 1/1 (frame 1/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.8ms
+video 1/1 (frame 2/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.0ms
+video 1/1 (frame 3/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 4/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 5/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.8ms
+video 1/1 (frame 6/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 7/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 8/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+video 1/1 (frame 9/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 10.9ms
+video 1/1 (frame 10/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 10.3ms
+video 1/1 (frame 11/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 5.3ms
+video 1/1 (frame 12/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 7.4ms
+video 1/1 (frame 13/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 5.1ms
+video 1/1 (frame 14/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 15/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 16/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 5.3ms
+video 1/1 (frame 17/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 18/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.5ms
+video 1/1 (frame 19/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.5ms
+video 1/1 (frame 20/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.5ms
+video 1/1 (frame 21/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.2ms
+video 1/1 (frame 22/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+video 1/1 (frame 23/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 24/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.9ms
+video 1/1 (frame 25/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.7ms
+video 1/1 (frame 26/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.6ms
+video 1/1 (frame 27/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 28/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.3ms
+video 1/1 (frame 29/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 3.8ms
+video 1/1 (frame 30/30) C:\workspace\20261106\02_application\data\demo.avi: 128x160 (no detections), 4.0ms
+Speed: 0.3ms preprocess, 4.7ms inference, 0.2ms postprocess per image at shape (1, 3, 128, 160)
+       tracker  frames  track_rows  seconds  throughput                                                   scope   id_switch
+bytetrack.yaml      30           0 3.382370    8.869519 decode+infer+track+plot+encode; first-run cost included 별도 GT 매칭 필요
+  botsort.yaml      30           0 0.231426  129.631350 decode+infer+track+plot+encode; first-run cost included 별도 GT 매칭 필요
