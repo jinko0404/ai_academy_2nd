@@ -1,0 +1,77 @@
+[
+  {
+    "backend": "mock",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "path": "C:\\workspace\\20261109\\01_basic\\doc01.png"
+          },
+          {
+            "type": "text",
+            "text": "What is the issue date?"
+          }
+        ]
+      }
+    ],
+    "response": {
+      "field": "issued_at",
+      "answer": "2026-11-01",
+      "evidence": "DATE: 2026-11-01"
+    },
+    "model_id": null,
+    "inference_ms": null
+  },
+  {
+    "backend": "mock",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "path": "C:\\workspace\\20261109\\01_basic\\doc01.png"
+          },
+          {
+            "type": "text",
+            "text": "Who is the supplier?"
+          }
+        ]
+      }
+    ],
+    "response": {
+      "field": "supplier",
+      "answer": "BLUE CAFE",
+      "evidence": "SUPPLIER: BLUE CAFE"
+    },
+    "model_id": null,
+    "inference_ms": null
+  },
+  {
+    "backend": "mock",
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "image",
+            "path": "C:\\workspace\\20261109\\01_basic\\doc01.png"
+          },
+          {
+            "type": "text",
+            "text": "What is the total in KRW?"
+          }
+        ]
+      }
+    ],
+    "response": {
+      "field": "total_amount",
+      "answer": 27000,
+      "evidence": "TOTAL: 27000"
+    },
+    "model_id": null,
+    "inference_ms": null
+  }
+]

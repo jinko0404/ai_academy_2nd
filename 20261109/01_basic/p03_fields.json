@@ -1,0 +1,29 @@
+[
+  {
+    "document_id": "doc01",
+    "issued_at": "2026-11-01",
+    "supplier": "BLUE CAFE",
+    "total_amount": 27000,
+    "currency": "KRW",
+    "ocr_source": "recorded Tesseract",
+    "raw_text": "INVOICE DOCO1\nDATE: 2026-11-01\nSUPPLIER: BLUE CAFE\nITEM QTY PRICE AMOUNT\nTEA 2 3000 6000\nCOFFEE 3 5000 15000\nCAKE 1 6000 6000\nTOTAL: 27000\nCURRENCY: KRW"
+  },
+  {
+    "document_id": "doc02",
+    "issued_at": "2026-11-02",
+    "supplier": "PINE BOOKS",
+    "total_amount": 18000,
+    "currency": "KRW",
+    "ocr_source": "recorded Tesseract",
+    "raw_text": "INVOICE DOCO2\nDATE: 2026-11-02\nSUPPLIER: PINE BOOKS\nITEM QTY PRICE AMOUNT\nBOOK 2 6000 12000\nPEN 3 1000 3000\nPAD 1 3000 3000\nTOTAL: 18000\nCURRENCY: KRW"
+  },
+  {
+    "document_id": "doc03",
+    "issued_at": "2026-11-03",
+    "supplier": "ALPHA STUDIO",
+    "total_amount": 33000,
+    "currency": "KRW",
+    "ocr_source": "recorded Tesseract",
+    "raw_text": "INVOICE DOCO3\nDATE: 2026-11-03\nSUPPLIER: ALPHA STUDIO\nITEM QTY PRICE AMOUNT\nPRINT 4 3000 12000\nFRAME 1 9000 9000\nPAPER 3 4000 12000\nTOTAL: 33000\nCURRENCY: KRW"
+  }
+]

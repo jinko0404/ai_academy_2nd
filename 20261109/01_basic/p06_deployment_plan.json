@@ -1,0 +1,14 @@
+{
+  "stages": [
+    "모델",
+    "ONNX 내보내기/검증",
+    "대상 장치에서 엔진 build",
+    "Runtime 추론/검증"
+  ],
+  "status": "DESIGN_ONLY",
+  "target_device": null,
+  "tensorrt_version": null,
+  "engine_sha256": null,
+  "latency_ms": null,
+  "checked_on_hardware": false
+}
