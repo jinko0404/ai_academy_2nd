@@ -1,0 +1,35 @@
+{
+  "next_id": 8,
+  "entries": [
+    {
+      "id": 1,
+      "title": "가상환경",
+      "category": "setup",
+      "content": "프로젝트별 패키지를 분리한다."
+    },
+    {
+      "id": 2,
+      "title": "서버 실행",
+      "category": "api",
+      "content": "uvicorn으로 개발 서버를 켠다."
+    },
+    {
+      "id": 3,
+      "title": "입력 오류",
+      "category": "api",
+      "content": "422이면 입력값을 확인한다."
+    },
+    {
+      "title": "FastAPI 서버 실행",
+      "content": "python -m uvicorn main:app --reload 명령으로 서버를 실행한다.",
+      "category": "api",
+      "id": 5
+    },
+    {
+      "title": "PUT 요청 사용법",
+      "content": "PUT 요청은 title, content, category를 모두 보내 기존 지식을 수정하며 ID는 유지한다.",
+      "category": "api",
+      "id": 6
+    }
+  ]
+}
