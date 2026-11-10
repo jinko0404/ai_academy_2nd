@@ -21,7 +21,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.05 | 데이터셋 분할·누수 검사, 전이학습·Fine-tuning, 클래스 불균형 대응, 오류 분석·Grad-CAM | [학습 자료](./20261105/README.md) |
 | 2026.11.06 | 객체 탐지·YOLO, 박스 좌표·IoU·NMS, mAP 평가, ByteTrack·BoT-SORT 추적 및 오류 분석 | [학습 자료](./20261106/README.md) |
 | 2026.11.09 | OCR·문서 전처리, 정보 추출·구조화, VLM 문서 질의응답·근거 검증, 품질 평가 및 엣지 배포 | [학습 자료](./20261109/README.md) |
-| 2026.11.10 | FastAPI·Uvicorn, HTTP·CRUD, Pydantic 입력 검증, JSON 저장·ID 관리, category 필터 및 서버 재시작 검증 | [학습 자료](./20261110/README.md) |
+| 2026.11.10 | FastAPI·Uvicorn, HTTP·CRUD, Pydantic 입력 검증, JSON 저장·ID 관리, category 필터 | [학습 자료](./20261110/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
