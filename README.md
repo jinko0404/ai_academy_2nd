@@ -22,6 +22,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.06 | 객체 탐지·YOLO, 박스 좌표·IoU·NMS, mAP 평가, ByteTrack·BoT-SORT 추적 및 오류 분석 | [학습 자료](./20261106/README.md) |
 | 2026.11.09 | OCR·문서 전처리, 정보 추출·구조화, VLM 문서 질의응답·근거 검증, 품질 평가 및 엣지 배포 | [학습 자료](./20261109/README.md) |
 | 2026.11.10 | FastAPI·Uvicorn, HTTP·CRUD, Pydantic 입력 검증, JSON 저장·ID 관리, category 필터 | [학습 자료](./20261110/README.md) |
+| 2026.11.11 | PostgreSQL·SQL CRUD, PK·FK·ERD, JOIN·집계, 제약조건, 트랜잭션·인덱스·실행계획 | [학습 자료](./20261111/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
@@ -35,12 +36,19 @@ ai_academy_2nd/
 │   ├── 01_기본필수/
 │   └── 02_응용/
 ├── ...
-└── 20261110/
-    ├── README.md
-    └── mentee/
-        ├── 01_basic/
-        ├── 02_intermediate/
-        └── 03_advanced/
+├── 20261110/
+│   ├── README.md
+│   └── mentee/
+│       ├── 01_basic/
+│       ├── 02_intermediate/
+│       └── 03_advanced/
+└── 20261111/
+    ├── README_PostgreSQL.md
+    ├── mentee/
+    │   ├── 00_준비/
+    │   ├── 01_기본필수/
+    │   └── 02_응용/
+    └── result/
 ```
 
 - `README.md`: 날짜별 주요 학습 내용과 개념 정리
@@ -50,6 +58,7 @@ ai_academy_2nd/
 - `mentee/01_basic/`, `02_intermediate/`, `03_advanced/`: 11월 10일 실습의 기본·응용·심화 구분
 - `data/`: 실습에 사용되는 데이터와 데이터 분할 정보
 - `outputs/`: 모델 비교, 예측 결과, 특성 중요도 등 실험 산출물
+- `erd/`, `reports/`, `result/`: DB 관계 워크시트, SQL 학습·프로젝트 기록, 조회 결과 스냅샷
 
 ※ 날짜별 폴더의 실제 구성은 학습 주제와 과제에 따라 달라질 수 있습니다.
 
@@ -67,6 +76,7 @@ ai_academy_2nd/
 | OCR·문서 이해 | 인식 원문·좌표, 추출 필드·표 구조, CER·WER·필드 정확도, VLM 응답의 원문 근거와 검토 사유 |
 | 배포·성능 측정 | ONNX·TensorRT·Jetson 배포 흐름과 실행 환경, 실제 측정한 지연 시간·처리량, 추가 검증 항목 |
 | API·백엔드 | FastAPI 지식 CRUD, Path·Query·Body 구분, Pydantic 검증, HTTP 상태코드, JSON 저장·ID 관리, category 필터와 재시작 후 데이터 유지 |
+| 데이터베이스·SQL | PostgreSQL 접속, PK·FK와 1:N 관계, CRUD·RETURNING, JOIN·분류별 집계, 제약 오류와 ROLLBACK, COMMIT·재접속, 인덱스·실행계획 |
 
 결과를 비교할 때는 데이터 분할, 전처리, 모델 설정과 평가 기준을 함께 명시합니다. 예측값과 정답을 대조하고, 개선 효과뿐 아니라 오류 사례와 실험의 한계도 정리합니다.
 
@@ -81,13 +91,24 @@ FastAPI로 지식을 등록·조회·수정·삭제하는 API를 구현했습니
 
 학습 범위는 원본 지식의 CRUD 관리이며, RAG 검색·LLM 답변 생성·Agent 실행은 후속 기능으로 구분합니다.
 
+### 11월 11일 · PostgreSQL 지식 관리 DB 실습
+
+`categories`와 `knowledge` 두 테이블을 중심으로 PK·FK와 1:N 관계를 정리하고 SQL 조회·추가·수정·삭제를 작성했습니다. JOIN으로 지식에 분류명을 붙이고, LEFT JOIN과 COUNT로 지식이 없는 분류까지 집계하는 흐름을 학습했습니다.
+
+제약조건 위반 시 SQLSTATE를 확인하고 ROLLBACK으로 회복하는 절차, COMMIT으로 변경을 확정하는 과정을 다뤘습니다. 인덱스와 EXPLAIN을 통해 실행계획을 살펴보는 방법도 학습했습니다. 일일프로젝트는 A 유지·B 수정·C 삭제를 나누고 기존 행 스냅샷과 최종 상태를 비교하는 구조로 작성했습니다.
+
+- [기본필수 실습 안내](./20261111/mentee/01_기본필수/README.md) · [학습 기록](./20261111/mentee/01_기본필수/reports/learning_note.md) · [일일프로젝트 기록](./20261111/mentee/01_기본필수/reports/daily_note.md)
+- [응용 실습 안내](./20261111/mentee/02_응용/README.md) · [관계 워크시트](./20261111/mentee/02_응용/erd/관계_워크시트.md)
+- [기존 지식 스냅샷](./20261111/result/before_knowledge.csv)
+
 ## 🛠️ 개발 환경
 
-- Language: Python
+- Language: Python, SQL (PostgreSQL)
 - Editor: Visual Studio Code
 - Version Control: Git & GitHub
 - 주요 라이브러리: Pandas, NumPy, scikit-learn
 - API 개발·확인: FastAPI, Uvicorn, Pydantic, Postman, Swagger UI(`/docs`)
+- 데이터베이스: PostgreSQL, pgAdmin Query Tool, psql
 - 추가 라이브러리: 실습 주제에 따라 사용
 
 ## 📝 학습 기록 원칙
@@ -102,4 +123,4 @@ FastAPI로 지식을 등록·조회·수정·삭제하는 API를 구현했습니
 
 **Status:** In Progress  
 **Purpose:** AI/ML Learning Archive  
-**Last Updated:** 2026-11-10
+**Last Updated:** 2026-11-11
