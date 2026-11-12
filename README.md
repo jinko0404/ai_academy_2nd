@@ -23,6 +23,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.09 | OCR·문서 전처리, 정보 추출·구조화, VLM 문서 질의응답·근거 검증, 품질 평가 및 엣지 배포 | [학습 자료](./20261109/README.md) |
 | 2026.11.10 | FastAPI·Uvicorn, HTTP·CRUD, Pydantic 입력 검증, JSON 저장·ID 관리, category 필터 | [학습 자료](./20261110/README.md) |
 | 2026.11.11 | PostgreSQL·SQL CRUD, PK·FK·ERD, JOIN·집계, 제약조건, 트랜잭션·인덱스·실행계획 | [학습 자료](./20261111/README.md) |
+| 2026.11.12 | FastAPI–PostgreSQL 연동, SQLAlchemy ORM·Session, 지식 CRUD, 오류 처리·트랜잭션 | [학습 자료](./20261112/README.md) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
@@ -42,13 +43,24 @@ ai_academy_2nd/
 │       ├── 01_basic/
 │       ├── 02_intermediate/
 │       └── 03_advanced/
-└── 20261111/
-    ├── README_PostgreSQL.md
-    ├── mentee/
-    │   ├── 00_준비/
-    │   ├── 01_기본필수/
-    │   └── 02_응용/
-    └── result/
+├── 20261111/
+│   ├── README_PostgreSQL.md
+│   ├── mentee/
+│   │   ├── 00_준비/
+│   │   ├── 01_기본필수/
+│   │   └── 02_응용/
+│   └── result/
+└── 20261112/
+    ├── README.md
+    ├── Day19_01/
+    │   └── mentee/01_basic/
+    │       ├── 01_FastAPI/
+    │       └── 02_PostgreSQL/
+    └── Day19_02/
+        └── mentee/01_기본필수/
+            ├── 01_PM01_연동시작/
+            ├── 02_PM02_CRUD/
+            └── 03_PM03_오류_트랜잭션/
 ```
 
 - `README.md`: 날짜별 주요 학습 내용과 개념 정리
@@ -56,6 +68,7 @@ ai_academy_2nd/
 - `02_응용/`: 기본 개념을 확장한 응용 실습 및 실험
 - `03_심화/`: 응용을 넘어 직접 설계·검증하는 심화 실습 및 탐색
 - `mentee/01_basic/`, `02_intermediate/`, `03_advanced/`: 11월 10일 실습의 기본·응용·심화 구분
+- `Day19_01/`, `Day19_02/`: 11월 12일 오전의 API·DB 개별 실습과 오후의 API–DB 연동 실습
 - `data/`: 실습에 사용되는 데이터와 데이터 분할 정보
 - `outputs/`: 모델 비교, 예측 결과, 특성 중요도 등 실험 산출물
 - `erd/`, `reports/`, `result/`: DB 관계 워크시트, SQL 학습·프로젝트 기록, 조회 결과 스냅샷
@@ -77,6 +90,7 @@ ai_academy_2nd/
 | 배포·성능 측정 | ONNX·TensorRT·Jetson 배포 흐름과 실행 환경, 실제 측정한 지연 시간·처리량, 추가 검증 항목 |
 | API·백엔드 | FastAPI 지식 CRUD, Path·Query·Body 구분, Pydantic 검증, HTTP 상태코드, JSON 저장·ID 관리, category 필터와 재시작 후 데이터 유지 |
 | 데이터베이스·SQL | PostgreSQL 접속, PK·FK와 1:N 관계, CRUD·RETURNING, JOIN·분류별 집계, 제약 오류와 ROLLBACK, COMMIT·재접속, 인덱스·실행계획 |
+| API–DB 연동 | SQLAlchemy ORM 매핑, 요청별 Session, category 문자열과 FK 연결, CRUD 트랜잭션, API 응답 ID와 SQL 행 대조, DB 상태 확인 |
 
 결과를 비교할 때는 데이터 분할, 전처리, 모델 설정과 평가 기준을 함께 명시합니다. 예측값과 정답을 대조하고, 개선 효과뿐 아니라 오류 사례와 실험의 한계도 정리합니다.
 
@@ -101,6 +115,19 @@ FastAPI로 지식을 등록·조회·수정·삭제하는 API를 구현했습니
 - [응용 실습 안내](./20261111/mentee/02_응용/README.md) · [관계 워크시트](./20261111/mentee/02_응용/erd/관계_워크시트.md)
 - [기존 지식 스냅샷](./20261111/result/before_knowledge.csv)
 
+### 11월 12일 · FastAPI–PostgreSQL 연동과 트랜잭션 실습
+
+오전에는 JSON 파일을 사용하는 FastAPI 지식 관리 API와 PostgreSQL 테이블 구축·SQL CRUD를 각각 실습했습니다. 오후에는 SQLAlchemy ORM과 Psycopg 드라이버를 통해 FastAPI를 PostgreSQL에 연결하고, `categories`와 `knowledge` 테이블을 사용하는 지식 CRUD를 작성했습니다.
+
+`Engine`과 연결 풀은 재사용하고, `get_db` 의존성으로 요청별 `Session`을 생성·정리하는 구조를 다뤘습니다. API의 `category` 문자열로 분류를 조회하거나 생성한 뒤 `category_id`로 연결하고, `flush()`로 ID를 확보하는 단계와 `commit()`으로 저장을 확정하는 단계를 구분했습니다.
+
+오류·트랜잭션 실습에서는 분류와 지식 변경을 하나의 작업으로 묶고, 예외가 발생하면 `rollback()` 후 다시 예외를 전달하도록 구현했습니다. 없는 지식의 404, 입력 검증의 422, 무결성 오류의 409 처리와 `/health`의 `SELECT 1`·연결 오류 503 처리를 살펴봤습니다. API 응답과 SQL에서 같은 ID의 행을 대조하는 것이 연동 검증 기준이며, 실제 DB 제약 위반 후 rollback·Session 복구 확인은 입력 검증과 별도의 검증 항목으로 구분합니다.
+
+- [11월 12일 개념 정리](./20261112/README.md) · [오전 기본필수 안내](./20261112/Day19_01/mentee/01_basic/README.md)
+- [오후 연동 시작](./20261112/Day19_02/mentee/01_기본필수/01_PM01_연동시작/README.md) · [CRUD 실습](./20261112/Day19_02/mentee/01_기본필수/02_PM02_CRUD/README.md) · [오류·트랜잭션 실습](./20261112/Day19_02/mentee/01_기본필수/03_PM03_오류_트랜잭션/README.md)
+
+개념 정리에는 Alembic Migration과 RAG·Agent로의 확장 범위도 포함되어 있습니다. 해당 내용은 현재 실습 코드의 구현·실행 결과와 구분해 참고합니다.
+
 ## 🛠️ 개발 환경
 
 - Language: Python, SQL (PostgreSQL)
@@ -109,6 +136,7 @@ FastAPI로 지식을 등록·조회·수정·삭제하는 API를 구현했습니
 - 주요 라이브러리: Pandas, NumPy, scikit-learn
 - API 개발·확인: FastAPI, Uvicorn, Pydantic, Postman, Swagger UI(`/docs`)
 - 데이터베이스: PostgreSQL, pgAdmin Query Tool, psql
+- API–DB 연동: SQLAlchemy, Psycopg, pydantic-settings
 - 추가 라이브러리: 실습 주제에 따라 사용
 
 ## 📝 학습 기록 원칙
@@ -123,4 +151,4 @@ FastAPI로 지식을 등록·조회·수정·삭제하는 API를 구현했습니
 
 **Status:** In Progress  
 **Purpose:** AI/ML Learning Archive  
-**Last Updated:** 2026-11-11
+**Last Updated:** 2026-11-12
