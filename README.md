@@ -25,7 +25,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.11 | PostgreSQL·SQL CRUD, PK·FK·ERD, JOIN·집계, 제약조건, 트랜잭션·인덱스·실행계획 | [학습 자료](./20261111/README.md) |
 | 2026.11.12 | FastAPI–PostgreSQL 연동, SQLAlchemy ORM·Session, 지식 CRUD, 오류 처리·트랜잭션 | [학습 자료](./20261112/README.md) |
 | 2026.11.13 | LLM 기초, Token·Embedding·Transformer·Attention, Softmax·출력 선택, 답변 검증 | [학습 자료](./20261113/README.md) |
-| 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가, JSON·Schema·출처 검증, 제한된 재시도 | [개념 정리](./20261116/README.md) · [실습 코드](./20261116/mentee/01_basic/) |
+| 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가 | [학습 자료](./20261116/README.md)
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
