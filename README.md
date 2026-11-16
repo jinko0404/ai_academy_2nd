@@ -25,6 +25,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.11 | PostgreSQL·SQL CRUD, PK·FK·ERD, JOIN·집계, 제약조건, 트랜잭션·인덱스·실행계획 | [학습 자료](./20261111/README.md) |
 | 2026.11.12 | FastAPI–PostgreSQL 연동, SQLAlchemy ORM·Session, 지식 CRUD, 오류 처리·트랜잭션 | [학습 자료](./20261112/README.md) |
 | 2026.11.13 | LLM 기초, Token·Embedding·Transformer·Attention, Softmax·출력 선택, 답변 검증 | [학습 자료](./20261113/README.md) |
+| 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가, JSON·Schema·출처 검증, 제한된 재시도 | [개념 정리](./20261116/README.md) · [실습 코드](./20261116/mentee/01_basic/) |
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
@@ -62,17 +63,33 @@ ai_academy_2nd/
 │           ├── 01_PM01_연동시작/
 │           ├── 02_PM02_CRUD/
 │           └── 03_PM03_오류_트랜잭션/
-└── 20261113/
+├── 20261113/
+│   ├── README.md
+│   └── mentee/01_basic/
+│       ├── 01_ecosystem/
+│       ├── 02_tokenization/
+│       ├── 03_embeddings/
+│       ├── 04_transformer/
+│       ├── 05_attention/
+│       ├── 06_inference/
+│       ├── 07_limits/
+│       └── 08_daily_project/
+└── 20261116/
     ├── README.md
-    └── mentee/01_basic/
-        ├── 01_ecosystem/
-        ├── 02_tokenization/
-        ├── 03_embeddings/
-        ├── 04_transformer/
-        ├── 05_attention/
-        ├── 06_inference/
-        ├── 07_limits/
-        └── 08_daily_project/
+    ├── mentor/
+    └── mentee/
+        ├── coursekit/
+        ├── data/
+        ├── tools/
+        └── 01_basic/
+            ├── 01_prompt_structure/
+            ├── 02_examples_versions/
+            ├── 03_task_decomposition/
+            ├── 04_context_builder/
+            ├── 05_ab_evaluation/
+            ├── 06_output_validation/
+            ├── 07_bounded_retry/
+            └── 08_daily_project/
 ```
 
 - `README.md`: 날짜별 주요 학습 내용과 개념 정리
@@ -81,6 +98,7 @@ ai_academy_2nd/
 - `03_심화/`: 응용을 넘어 직접 설계·검증하는 심화 실습 및 탐색
 - `mentee/01_basic/`, `02_intermediate/`, `03_advanced/`: 날짜별 실습의 기본·응용·심화 구분
 - `Day19_01/`, `Day19_02/`: 11월 12일 오전의 API·DB 개별 실습과 오후의 API–DB 연동 실습
+- `coursekit/`, `tools/`: Prompt 구성·검증·평가 공통 코드와 실행 환경 확인·수동 응답 등록 도구
 - `data/`: 실습에 사용되는 데이터와 데이터 분할 정보
 - `outputs/`: 모델 비교, 예측 결과, 특성 중요도 등 실험 산출물
 - `erd/`, `reports/`, `result/`: DB 관계 워크시트, SQL 학습·프로젝트 기록, 조회 결과 스냅샷
@@ -104,6 +122,8 @@ ai_academy_2nd/
 | 데이터베이스·SQL | PostgreSQL 접속, PK·FK와 1:N 관계, CRUD·RETURNING, JOIN·분류별 집계, 제약 오류와 ROLLBACK, COMMIT·재접속, 인덱스·실행계획 |
 | API–DB 연동 | SQLAlchemy ORM 매핑, 요청별 Session, category 문자열과 FK 연결, CRUD 트랜잭션, API 응답 ID와 SQL 행 대조, DB 상태 확인 |
 | LLM 기초 | 교육용 토큰화·패딩·문맥 예산, 벡터 유사도, Transformer shape, Causal Attention, 온도별 확률·Greedy 선택, 답변의 형식·근거·원본 불일치 분류 |
+| Prompt·Context Engineering | 요구사항 여섯 요소, Zero/Few-shot 예제, 필요한 사실과 부족한 근거 구분, 지식 ID 선택·직렬화·가상 토큰 예산, 고정한 A/B 입력과 D/H 질문, 첫 응답 집계와 미실행·미평가 기록 |
+| 출력 검증·재시도 | JSON 문법, Pydantic의 엄격한 네 필드 계약, 출처 범위·상태 조합 검사, 사람의 근거 검토, 형식 오류에 대한 최대 2회 시도와 시도별 기록 |
 
 결과를 비교할 때는 데이터 분할, 전처리, 모델 설정과 평가 기준을 함께 명시합니다. 예측값과 정답을 대조하고, 개선 효과뿐 아니라 오류 사례와 실험의 한계도 정리합니다.
 
@@ -133,4 +153,4 @@ ai_academy_2nd/
 
 **Status:** In Progress  
 **Purpose:** AI/ML Learning Archive  
-**Last Updated:** 2026-11-13
+**Last Updated:** 2026-11-16
