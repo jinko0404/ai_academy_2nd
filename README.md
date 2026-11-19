@@ -26,7 +26,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.12 | FastAPI–PostgreSQL 연동, SQLAlchemy ORM·Session, 지식 CRUD, 오류 처리·트랜잭션 | [학습 자료](./20261112/README.md) |
 | 2026.11.13 | LLM 기초, Token·Embedding·Transformer·Attention, Softmax·출력 선택, 답변 검증 | [학습 자료](./20261113/README.md) |
 | 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가 | [학습 자료](./20261116/README.md) |
-| 2026.11.18 | E5 임베딩, 벡터 유사도·거리, HNSW 실행계획, 검색 결과 정성평가, Retriever 구현 | [학습 자료](./20261118/README.md)|
+| 2026.11.18 | E5 임베딩, 벡터 유사도·거리, HNSW 실행계획, 검색 결과 정성평가, Retriever 구현 | [학습 자료](./20261118/Readme.md)|
 
 학습 기록은 교육 진행에 따라 날짜별로 추가합니다.
 
