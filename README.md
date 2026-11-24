@@ -28,7 +28,7 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가 | [학습 자료](./20261116/README.md) |
 | 2026.11.18 | E5 임베딩, 벡터 유사도·거리, HNSW 실행계획, 검색 결과 정성평가, Retriever 구현 | [학습 자료](./20261118/Readme.md) |
 | 2026.11.19 | 문서 수집·파싱·정제·청킹, 누락·중복 검증, 메타데이터, E5·pgvector 저장·공개·검색 | [학습 자료](./20261119/README.md) |
-| 2026.11.23 | Basic RAG·LangChain, 검색 결과를 `Document`로 변환, 답변 근거 구성, 구조화된 답변·출처 검증 | [학습 자료](./20261123/README.md) |
+| 2026.11.23 | Basic RAG·LangChain, 검색 결과를 `Document`로 변환, 구조화된 답변·출처 검증 | [학습 자료](./20261123/README.md) |
 | 2026.11.24 | Multi-query, E5·pgvector 후보 검색, Cross-Encoder 재정렬, LangChain·FastAPI 통합 | [학습 자료](./20261124/README.md)|
 
 ## 🗂️ 저장소 구조
