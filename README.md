@@ -28,6 +28,8 @@ AI 교육 과정에서 학습한 개념과 실습 코드를 날짜별로 정리�
 | 2026.11.16 | Prompt·Context Engineering, Zero/Few-shot, 작업 분해, A/B 평가 | [학습 자료](./20261116/README.md) |
 | 2026.11.18 | E5 임베딩, 벡터 유사도·거리, HNSW 실행계획, 검색 결과 정성평가, Retriever 구현 | [학습 자료](./20261118/Readme.md) |
 | 2026.11.19 | 문서 수집·파싱·정제·청킹, 누락·중복 검증, 메타데이터, E5·pgvector 저장·공개·검색 | [학습 자료](./20261119/README.md) |
+| 2026.11.23 | Basic RAG·LangChain, 검색 결과를 `Document`로 변환, 답변 근거 구성, 구조화된 답변·출처 검증 | [학습 자료](./20261123/README.md) |
+| 2026.11.24 | Multi-query, E5·pgvector 후보 검색, Cross-Encoder 재정렬, LangChain·FastAPI 통합 | [학습 자료](./20261124/README.md)|
 
 ## 🗂️ 저장소 구조
 
@@ -63,17 +65,6 @@ ai_academy_2nd/
 │           ├── 01_PM01_연동시작/
 │           ├── 02_PM02_CRUD/
 │           └── 03_PM03_오류_트랜잭션/
-├── 20261113/
-│   ├── README.md
-│   └── mentee/01_basic/
-│       ├── 01_ecosystem/
-│       ├── 02_tokenization/
-│       ├── 03_embeddings/
-│       ├── 04_transformer/
-│       ├── 05_attention/
-│       ├── 06_inference/
-│       ├── 07_limits/
-│       └── 08_daily_project/
 ```
 
 - `README.md`: 날짜별 주요 학습 내용과 개념 정리
@@ -82,7 +73,7 @@ ai_academy_2nd/
 - `03_심화/`: 응용을 넘어 직접 설계·검증하는 심화 실습 및 탐색
 - `mentee/01_basic/`, `02_intermediate/`, `03_advanced/`: 날짜별 실습의 기본·응용·심화 구분
 - `Day19_01/`, `Day19_02/`: 11월 12일 오전의 API·DB 개별 실습과 오후의 API–DB 연동 실습
-- `coursekit/`, `tools/`: Prompt 구성·검증·평가 공통 코드와 실행 환경 확인·수동 응답 등록 도구
+- `coursekit/`, `tools/`: 날짜별 실습에 공통으로 쓰는 코드와 실행 환경 점검·데이터 준비 도구
 - `data/`: 실습에 사용되는 데이터와 데이터 분할 정보
 - `outputs/`: 모델 비교, 예측 결과, 특성 중요도 등 실험 산출물
 - `erd/`, `reports/`, `result/`: DB 관계 워크시트, SQL 학습·프로젝트 기록, 조회 결과 스냅샷
@@ -110,6 +101,9 @@ ai_academy_2nd/
 | 출력 검증·재시도 | JSON 문법, Pydantic의 엄격한 네 필드 계약, 출처 범위·상태 조합 검사, 사람의 근거 검토, 형식 오류에 대한 최대 2회 시도와 시도별 기록 |
 | 임베딩·벡터 검색 | E5 질문·문서 입력과 384차원 벡터 검증, 원문·벡터 저장, 코사인 거리 기반 Top-k와 분류 필터, HNSW 실행계획 확인, 질문별 근거 검토와 Retriever 후보 반환 |
 | 문서 처리·인덱싱 | 원본 해시, 형식별 텍스트·출처 추출, 정제 및 청크 위치, 커버리지·중복 검사, 메타데이터와 공개 버전, pgvector 저장·검색 결과 |
+| 보고서 처리 Agent | 요구사항과 ERD 대조, CRUD 응답과 SQL 저장값 확인, E5 색인 상태, 하이브리드 검색 결과와 요약 출처 대조 |
+| Basic RAG·LangChain | `Document` 본문·메타데이터, 답변 근거와 프롬프트의 구성, 구조화된 응답과 실제 인용 출처 대조 |
+| 검색 개선·RAG API | 원 질문과 검색용 질문, 후보와 근거 문서 ID, 같은 후보의 재정렬 전후 상위 2개 비교, 단계별 소요 시간, HTTP 200·422·502 구분 |
 
 결과를 비교할 때는 데이터 분할, 전처리, 모델 설정과 평가 기준을 함께 명시합니다. 예측값과 정답을 대조하고, 개선 효과뿐 아니라 오류 사례와 실험의 한계도 정리합니다.
 
@@ -124,6 +118,7 @@ ai_academy_2nd/
 - 데이터베이스: PostgreSQL, pgAdmin Query Tool, psql
 - API–DB 연동: SQLAlchemy, Psycopg, pydantic-settings
 - 임베딩·벡터 검색: Sentence Transformers(E5), PostgreSQL의 pgvector 확장, pgvector Python 패키지
+- RAG·재정렬: LangChain Core, Sentence Transformers Cross-Encoder, PyTorch CUDA, FastAPI TestClient
 - 추가 라이브러리: 실습 주제에 따라 사용
 
 ## 📝 학습 기록 원칙
@@ -138,4 +133,4 @@ ai_academy_2nd/
 
 **Status:** In Progress  
 **Purpose:** AI/ML Learning Archive  
-**Last Updated:** 2026-11-19
+**Last Updated:** 2026-11-24
